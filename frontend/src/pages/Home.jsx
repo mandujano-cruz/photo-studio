@@ -6,6 +6,14 @@ import image4 from '../images/image-example-4.jpg';
 import image5 from '../images/image-example-5.jpg';
 import image6 from '../images/me-example.jpg';
 
+const photos = [
+  { id: 1, src: image1, alt: 'Retrato 1' },
+  { id: 2, src: image2, alt: 'Retrato 2' },
+  { id: 3, src: image3, alt: 'Retrato 3' },
+  { id: 4, src: image4, alt: 'Retrato 4' },
+  { id: 5, src: image5, alt: 'Retrato 5' }
+]
+
 export default function Home () {
   return(
     <main className="home">
@@ -19,11 +27,9 @@ export default function Home () {
         <div className='portfolio-section__container home__section'>
           <h2 className="portfolio-section__title home__section-title">PORTAFOLIO</h2>
           <div className='portfolio-section__container-photo'>
-            <img className='portfolio-section__item' src={image1} alt="" />
-            <img className='portfolio-section__item' src={image2} alt="" />
-            <img className='portfolio-section__item' src={image3} alt="" />
-            <img className='portfolio-section__item' src={image4} alt="" />
-            <img className='portfolio-section__item' src={image5} alt="" />
+            {photos.map(photo => (
+              <img className='portfolio-section__item' key={photo.id} src={photo.src} alt={photo.alt} />
+            ))}
           </div>
         </div>
       </section>
