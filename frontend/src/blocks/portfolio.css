@@ -1,0 +1,50 @@
+.portfolio {
+  height: 560px;
+  background-color: #000;
+}
+
+.portfolio::-webkit-scrollbar {
+  height: 8px;
+}
+
+.portfolio::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.portfolio::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.portfolio::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.portfolio__gallery {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+  width: 95%;
+  cursor: grab;
+  user-select: none;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #000;
+}
+
+.portfolio__image {
+  height: 500px;
+  width: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-right: 30px;
+  scroll-snap-align: center;
+}
+
+.portfolio__image:last-child {
+  margin-right: 0;
+}
