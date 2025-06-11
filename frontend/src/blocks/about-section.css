@@ -1,0 +1,31 @@
+.about-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+}
+
+.about-section__content {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+}
+
+.about-section__image {
+  border-radius: 100%;
+  width: 100%;
+}
+
+.about-section__text {
+  width: 100%;
+}
+
+.about-section__subtitle {
+  font-size: 28px;
+}
+
+.about-section__description {
+  font-size: 25px;
+  line-height: 32px;
+}

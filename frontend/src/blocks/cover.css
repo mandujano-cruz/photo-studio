@@ -1,0 +1,32 @@
+.cover {
+  display: flex;
+  background-color: #000;
+}
+
+.cover__container {
+  margin: auto;
+  max-width: 1280px;
+  position: relative;
+}
+
+.cover__image {
+  width: 100%;
+}
+
+.cover__text {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 50px;
+  color: #FFF;
+  font-size: 35px;
+  z-index: 10;
+}
+
+.cover__text::after{
+  content: '';
+  margin-right: -50px;
+}
