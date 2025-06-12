@@ -46,6 +46,10 @@
   color: #fff;
 }
 
+.header__link_selected {
+  text-decoration: underline;
+}
+
 .header__link--login {
   border-left: 1px solid #555;
   padding-left: 20px;
