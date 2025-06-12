@@ -1,0 +1,63 @@
+.about {
+  background-color: #000;
+}
+
+.about__container {
+  padding-top: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.about__container_reverse {
+  align-items: start;
+}
+
+.about__title {
+  color: #FFF;
+  text-align: end;
+  font-size: 45px;
+  margin: 0 7.5% 0 0;
+}
+
+.about__title_reverse {
+  text-align: start;
+  margin: 0 0 0 7.5%;
+}
+
+.about__content {
+  position: relative;
+  margin: 0;
+  width: 75%;
+  background-color: #FFF;
+}
+
+.about__image {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
+  width: 40%;
+}
+
+.about__image_reverse {
+  top: 0%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.about__text {
+  text-align: end;
+  margin: 5% 10% 5% 20%;
+  font-family: "Inter", sans-serif;
+  line-height: 35px;
+  font-size: 22px;
+}
+
+.about__text_reverse {
+  text-align: start;
+  margin: 5% 20% 5% 10%;
+}
