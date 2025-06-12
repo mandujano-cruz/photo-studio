@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useEffect, useCallback } from 'react';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Services from './pages/Services';
@@ -12,6 +13,21 @@ import Footer from './components/Footer';
 
 
 function App() {
+  const navigate = useNavigate();
+  const handleKeyDown = useCallback((event) => {
+    if ((event.ctrlKey || event.metaKey) && event.key === 'l') {
+      event.preventDefault();
+      navigate('/login');
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleKeyDown]);
 
   return (
     <>
