@@ -17,19 +17,30 @@
 
 .services__tab {
   width: 200px;
+  height: 40px;
   background: none;
-  border: thin, solid, #FFF;
+  border: thin, solid, #999;
   color: #999;
   cursor: pointer;
   padding: 10px 15px;
   transition: all 0.3s ease;
-  border-radius: 25% / 100%;
+  border-radius: 20px;
+}
+
+.services__tab:hover {
+  color: #FFF;
+  border-color: #FFF;
 }
 
 .services__tab_selected {
   color: #000;
   background-color: #FFF;
   font-weight: bold;
+}
+
+.services__tab_selected:hover {
+  color: #FFF;
+  background-color: #000;
 }
 
 .services__content {
