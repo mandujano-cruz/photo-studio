@@ -1,4 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
+import logo from '../images/MP_Logo_white.png'
+import fb_icon from '../images/facebook-icon.png'
+import ig_icon from '../images/instagram-icon.png'
 
 export default function Footer () {
   const scrollToTop = () => {
@@ -9,9 +12,13 @@ export default function Footer () {
     <footer className="footer">
       <div className="footer__content">
         <div className="footer__media">
-          <a className="footer__icon" href="https://facebook.com" target="_blank">Facebook</a>
-          <button className="footer__icon" onClick={scrollToTop} >Mandujano</button>
-          <a className="footer__icon" href="https://instagram.com" target="_blank">Instagram</a>
+          <a className="footer__icon" href="https://facebook.com" target="_blank">
+            <img className="footer__icon" src={fb_icon} alt="" />
+          </a>
+          <img className="footer__icon" onClick={scrollToTop} src={logo} alt="" />
+          <a className="footer__icon" href="https://instagram.com" target="_blank">
+            <img className="footer__icon" src={ig_icon} alt="" />
+          </a>
         </div>
         <nav className="footer__nav">
           <NavLink to="/portfolio" className="footer__link">PORTAFOLIO</NavLink>

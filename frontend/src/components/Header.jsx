@@ -1,4 +1,6 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import logo from '../images/MP_Logo_white.png'
+import logo_letter from '../images/MP_letter_white.png'
 
 export default function Header () {
   const location = useLocation();
@@ -13,7 +15,9 @@ export default function Header () {
       <nav className="header__nav">
         <NavLink to="/portfolio" className={`header__link ${isPortfolio ? 'header__link_selected' : ''}`}>PORTAFOLIO</NavLink>
         <NavLink to="/services" className={`header__link ${isServices ? 'header__link_selected' : ''}`}>SERVICIOS</NavLink>
-        <NavLink to="/" className="header__logo">Mandujano</NavLink>
+        <Link to="/" className="header__logo" >
+          <img src={isHome ? logo_letter : logo } alt="" />
+        </Link>
         <NavLink to="/about" className={`header__link ${isAbout ? 'header__link_selected' : ''}`}>NOSOTROS</NavLink>
         <NavLink to="/contact" className={`header__link ${isContact ? 'header__link_selected' : ''}`}>CONTACTO</NavLink>
       </nav>

@@ -20,12 +20,10 @@
 }
 
 .header__logo {
+  width: 330px;
   display: flex;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
-  justify-content: baseline;
+  justify-content: center;
+  align-items: center;
 }
 
 .header__nav {
