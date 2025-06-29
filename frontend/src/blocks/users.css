@@ -1,0 +1,26 @@
+.users {
+  display: flex;
+  min-height: calc(100vh - 220px);
+  height: 100%;
+}
+
+.users__content {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.users__content-title {
+  margin-bottom: 25px;
+  font-size: 35px;
+}
+
+.users__toggle-sidebar {
+  background-color: transparent;
+  color: #FFF;
+  border: 0;
+  cursor: pointer;
+  display: none;
+}

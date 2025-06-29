@@ -1,0 +1,48 @@
+.appointments__container {
+  margin: auto;
+  padding: 50px 0;
+  width: 80%;
+}
+
+.appointments__title {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.appointments__controls {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.appointments__input {
+  padding: 1px 10px;
+  font-size: 16px;
+  /* height: 40px; */
+  border: thin solid #FFF;
+  border-radius: 20px;
+  background-color: #000;
+  color: #FFF;
+}
+
+.appointments__input-select {
+  appearance: none;
+}
+
+.appointments__button {
+  margin-left: auto;
+  height: 40px;
+  padding: 10px 16px;
+  background-color: #000;
+  color: #080;
+  border: thin solid #080;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.appointments__button:hover {
+  background-color: #080;
+  color: #FFF;
+}
