@@ -15,55 +15,50 @@ const photos = [
 ]
 
 export default function Portfolio () {
-  const gallery = useRef(null);
+  // const gallery = useRef(null);
 
-  const [isDown, setIsDown] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
+  // const [isDown, setIsDown] = useState(false);
+  // const [startX, setStartX] = useState(0);
+  // const [scrollLeft, setScrollLeft] = useState(0);
 
-  const handleMouseDown = useCallback((e) => {
-    setIsDown(true);
-    if (gallery.current) {
-      gallery.current.classList.add('active-drag');
-      setStartX(e.pageX - gallery.current.offsetLeft);
-      setScrollLeft(gallery.current.scrollLeft);
-    }
-  }, []);
+  // const handleMouseDown = useCallback((e) => {
+  //   setIsDown(true);
+  //   if (gallery.current) {
+  //     gallery.current.classList.add('active-drag');
+  //     setStartX(e.pageX - gallery.current.offsetLeft);
+  //     setScrollLeft(gallery.current.scrollLeft);
+  //   }
+  // }, []);
 
-  const handleMouseLeave = useCallback(() => {
-    setIsDown(false);
-    if (gallery.current) {
-      gallery.current.classList.remove('active-drag');
-    }
-  }, []);
+  // const handleMouseLeave = useCallback(() => {
+  //   setIsDown(false);
+  //   if (gallery.current) {
+  //     gallery.current.classList.remove('active-drag');
+  //   }
+  // }, []);
 
-  const handleMouseUp = useCallback(() => {
-    setIsDown(false);
-    if (gallery.current) {
-      gallery.current.classList.remove('active-drag');
-    }
-  }, []);
+  // const handleMouseUp = useCallback(() => {
+  //   setIsDown(false);
+  //   if (gallery.current) {
+  //     gallery.current.classList.remove('active-drag');
+  //   }
+  // }, []);
 
-  const handleMouseMove = useCallback((e) => {
-    if (!isDown) return;
-    e.preventDefault();
+  // const handleMouseMove = useCallback((e) => {
+  //   if (!isDown) return;
+  //   e.preventDefault();
 
-    if (gallery.current) {
-      const x = e.pageX - gallery.current.offsetLeft;
-      const walk = (x - startX) * 1.8;
-      gallery.current.scrollLeft = scrollLeft - walk;
-    }
-  }, [isDown, startX, scrollLeft]);
+  //   if (gallery.current) {
+  //     const x = e.pageX - gallery.current.offsetLeft;
+  //     const walk = (x - startX) * 1.8;
+  //     gallery.current.scrollLeft = scrollLeft - walk;
+  //   }
+  // }, [isDown, startX, scrollLeft]);
 
   return(
     <main className="portfolio">
       <section 
         className="portfolio__gallery" 
-        ref={gallery}
-        onMouseDown={handleMouseDown}
-        onMouseLeave={handleMouseLeave}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}  
       >
         {photos.map(photo => (
           <img key={photo.id} src={photo.src} alt={photo.alt} className="portfolio__image" draggable="false" />

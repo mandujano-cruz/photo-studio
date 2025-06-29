@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import image1 from '../images/image-example-1.jpg';
 import image2 from '../images/image-example-2.jpg';
@@ -26,6 +26,15 @@ const servicesData = {
 
 export default function Services () {
   const [activeTab, setActiveTab] = useState('eventos');
+  const servicesSection = useRef(null);
+  const delayTime = 800;
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (servicesSection.current) servicesSection.current.scrollIntoView({ behavior: 'smooth', block: 'start'});
+    }, delayTime);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -35,7 +44,7 @@ export default function Services () {
 
   return(
     <main className="services">
-      <section className="services__container">
+      <section className="services__container" ref={servicesSection}>
         <nav className="services__nav">
           {Object.keys(servicesData).map((key) => (
             <button

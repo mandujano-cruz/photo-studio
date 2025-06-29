@@ -12,4 +12,14 @@
 @import url("./blocks/about.css");
 @import url("./blocks/contact.css");
 @import url("./blocks/login.css");
+@import url("./blocks/private-header.css");
+@import url("./blocks/dashboard.css");
+@import url("./blocks/appointments.css");
+@import url("./blocks/users.css");
+@import url("./blocks/photo.css");
+@import url("./blocks/profile.css");
+@import url("./blocks/sidebar.css");
+@import url("./blocks/form.css");
+@import url("./blocks/table.css");
 @import url("./blocks/footer.css");
+@import url("./blocks/media.css");

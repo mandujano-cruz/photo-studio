@@ -4,7 +4,7 @@ export default function Contact () {
   return(
     <main className="contact">
       <section className="contact__container">
-        <InlineWidget className="contact__calendly" url="https://calendly.com/mandujano_prueba" /> 
+        <InlineWidget className="contact__calendly" url="https://calendly.com/mandujano_prueba?background_color=000000&text_color=ffffff" /> 
         <div className="contact__content">
           <h2 className="contact__title">¡Hablemos de tu proyecto!</h2>
           <p className="contact__text">

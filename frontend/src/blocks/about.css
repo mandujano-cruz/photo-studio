@@ -16,15 +16,18 @@
 }
 
 .about__title {
+  position: absolute;
+  top: -50px;
+  right: 10%;
   color: #FFF;
   text-align: end;
   font-size: 45px;
-  margin: 0 7.5% 0 0;
+  margin: 0;
 }
 
 .about__title_reverse {
   text-align: start;
-  margin: 0 0 0 7.5%;
+  left: 10%;
 }
 
 .about__content {

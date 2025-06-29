@@ -40,8 +40,8 @@ export default function About() {
 
         return (
           <section key={section.id} className={containerClass}>
-            <h2 className={titleClass}>{section.title}</h2>
             <div className="about__content">
+              <h2 className={titleClass}>{section.title}</h2>
               <p className={textClass}>{section.text1}</p>
               <p className={textClass}>{section.text2}</p>
               <img className={imageClass} src={section.image} alt={section.alt} />
