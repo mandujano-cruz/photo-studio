@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Register from './Register'
 import Management from './Management'
+import * as auth from '../../utils/auth';
 
 export default function Users () {
   const [activeView, setActiveView] = useState('manage');
@@ -12,6 +13,14 @@ export default function Users () {
     setShowSidebar(false);
     setShowContent(true);
   };
+
+  const handleRegistration = ({ email, password, name, lastName, role }) => {
+    auth.register(email, password, name, lastName, role)
+      .then(() => {
+        console.log("Se ha registrado con éxito");
+      })
+      .catch((err) => console.error("Ha ocurrido un error: ", err));
+  }
 
   return (
     <section className={`users`}>
@@ -36,7 +45,7 @@ export default function Users () {
           setShowSidebar(true);
           setShowContent(false);
         }}>&lt; Volver</button>
-        {activeView === 'register' ? <Register /> : <Management />}
+        {activeView === 'register' ? <Register handleRegistration={handleRegistration} /> : <Management />}
       </div>
     </section>
   );
