@@ -18,6 +18,7 @@ export default function Register ({handleRegistration}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(data);
     handleRegistration(data);
   }
   return (

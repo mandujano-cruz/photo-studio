@@ -28,6 +28,7 @@ module.exports.createUser = (req, res, next) => {
         password: password,
         role: role === 'admin' ? 4 : 3,
       };
+      console.log(supersaasData)
 
       return ClientInstance.users.create(supersaasData)
         .then((supersaasUser) => {
@@ -40,7 +41,7 @@ module.exports.createUser = (req, res, next) => {
             { $set: { supersaasId: supersaasIdNumber } },
             { new: true }
           );
-        }); 
+        });
     })
     .then((user) => res.status(201).send({
       _id: user._id,
@@ -71,14 +72,14 @@ module.exports.login = (req, res, next) => {
         NODE_ENV === 'production' ? JWT_SECRET : 'clave-secreta',
         { expiresIn: '1d' },
       );
-      res.send({ 
+      res.send({
         token,
         user: {
           _id: user._id,
           email: user.email,
           full_name: user.full_name,
           role: user.role,
-        } 
+        }
       });
     })
     .catch((err) => next(err));
