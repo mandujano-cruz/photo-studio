@@ -54,6 +54,7 @@ function App() {
 
   useEffect(() => {
     const token = tok.getToken();
+    console.log("Token detectado ", token)
     if (!token) {
       setIsCheckingAuth(false);
       setIsLoggedIn(false);
@@ -61,6 +62,7 @@ function App() {
     }
     auth.getUserInfo(token)
       .then((data) => {
+        console.log("Respuesta de la API: ", data)
         if(data?.email) {
           setCurrentUser(data);
           setIsLoggedIn(true);
@@ -70,10 +72,11 @@ function App() {
         }
       })
       .catch((err) => {
-        console.error(err);
+        console.error("Error en getUserInfo", err);
         setIsLoggedIn(false);
       })
       .finally(() => {
+        console.log("Finalizando verificación de Auth")
         setIsCheckingAuth(false);
       });
   }, []);
