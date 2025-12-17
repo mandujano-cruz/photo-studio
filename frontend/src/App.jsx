@@ -33,6 +33,7 @@ function App() {
   const [userData, setUserData] = useState ({email: "", password: ""});
   const location = useLocation();
   const navigate = useNavigate();
+  alert("App cargada en la ruta: " + window.location.pathname);
 
   const api = new Api({
     baseUrl: "http://localhost:3000/",
