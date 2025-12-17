@@ -2,6 +2,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 
 export default function ProtectedRoute ({ isLoggedIn , isCheckingAuth, children }) {
   const location = useLocation();
+  console.log("isLoggedIn:", isLoggedIn, "isCheckingAuth:", isCheckingAuth)
   // const from = location.state?.from || "/"
   
   // if(isLoggedIn) return <Navigate to={from} />;
