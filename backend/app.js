@@ -9,7 +9,8 @@ const { login } = require('./controllers/users');
 const seedAdminUser = require('./utils/seed');
 
 const app = express();
-const { NODE_ENV, JWT_SECRET, PORT=3000, MONGO_URI } = process.env;
+const port = process.env.PORT || 3000;
+const { NODE_ENV, JWT_SECRET, MONGO_URI } = process.env;
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
@@ -40,6 +41,6 @@ app.use((req, res) => {
   res.status(404).send({message: "Recurso solicitado no encontrado"})
 });
 
-app.listen(PORT, '127.0.0.1', () => {
-  console.log(`Servidor corriendo en http://127.0.0.1:${PORT}`);
+app.listen(port, () => {
+  console.log(`Servidor corriendo en el puerto: ${port}`);
 });
