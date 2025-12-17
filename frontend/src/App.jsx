@@ -76,7 +76,7 @@ function App() {
       .finally(() => {
         setIsCheckingAuth(false);
       });
-  }, [setCurrentUser]);
+  }, []);
 
   // useEffect(() => {
   //   (async () => {
