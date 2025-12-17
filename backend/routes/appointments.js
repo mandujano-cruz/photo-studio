@@ -1,11 +1,9 @@
 const express = require("express");
-const { 
+const {
   getAppointments,
   getAvailability,
-  getAppointmentID,
   createAppointment,
   updateAppointment,
-  deleteAppointment,
 } = require("../controllers/appointments");
 
 const mapScheduleId = (type) => (req, res, next) => {

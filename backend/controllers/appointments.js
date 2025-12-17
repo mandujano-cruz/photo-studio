@@ -1,5 +1,4 @@
 const ClientInstance = require("../utils/supersaasClient");
-const Appointment = require("../models/Appointment"); // opcional MongoDB
 const { appointment } = require("supersaas-api-client/src/models/Appointment");
 const { errors } = require("celebrate");
 
