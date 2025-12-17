@@ -251,6 +251,19 @@
     font-size: 15px;
   } 
 
+  .contact__api {
+    width: 90%;
+  }
+
+  .contact__form {
+    width: 100%;
+  }
+
+  .contact__input {
+    height: 35px;
+    font-size: 12px;
+  }
+
   /* footer */
   .footer__nav {
     flex-wrap: wrap;
@@ -334,7 +347,7 @@
     align-items: center;
     justify-content: center;
     width: 50%;
-    background-color: #000;
+    background-color: transparent;
     border: 0;
   }
 
@@ -444,5 +457,68 @@
 
   .form__group_file {
     grid-column: span 1;
+  }
+
+  /* modal */
+  .modal {
+    width: 80%;
+  }
+
+  .modal__close {
+    width: 16px;
+    height: 16px;
+    top: -16px;
+    right: -16px;
+  }
+
+  .modal__container {
+    margin: 20px auto;
+    width: 80%;
+    height: 90%;
+  }
+
+  .modal__title {
+    font-size: 20px;
+  }
+
+  .modal__input {
+    margin: 5px 0;
+    font-size: 12px;
+  }
+
+  .modal__label {
+    font-size: 12px;
+  }
+
+  .modal__save {
+    margin-top: 15px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  /* profile */
+  .profile {
+    padding: 10px;
+  }
+
+  .profile__container {
+    padding: 25px 0;
+  }
+
+  .profile__title {
+    font-size: 25px;
+  }
+
+  .profile__item {
+    font-size: 15px;
+  }
+
+  .profile__label {
+    font-size: 18px;
+  }
+
+  .profile__button {
+    padding: 10px 10px;
+    font-size: 15px;
   }
 }

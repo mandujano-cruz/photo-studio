@@ -21,20 +21,30 @@
   margin-right: 8px;
   font-size: 14px;
   transition: all 0.3s ease;
+  text-align: left;
+  text-transform: capitalize;
 }
 
 .table__button:hover {
   color: #FFF;
 }
 
+.table__button_cancel {
+color: #dc3545;
+}
+
 .table__button_edit {
   color: #007bff;
 }
 
-.table__button_search {
+.table__cell_info {
   color: #f09000;
 }
 
-.table__button_cancel {
+.table__cell_ok {
+  color: #02AC66;
+}
+
+.table__cell_cancel {
   color: #dc3545;
 }

@@ -20,15 +20,15 @@ export default function Header () {
   return (
     <header className={`header${isHome ? ' header_transparent' : ' header_dark'}${isMenuOpen ? ' header_dark' : ''}`}>
       <nav className="header__nav">
-        <NavLink to="/portfolio" className={`header__link${isPortfolio ? ' header__link_selected' : ''}${isMenuOpen ? '' : ' header__link_hidden'}`}>PORTAFOLIO</NavLink>
-        <NavLink to="/services" className={`header__link${isServices ? ' header__link_selected' : ''}${isMenuOpen ? '' : ' header__link_hidden'}`}>SERVICIOS</NavLink>
+        <NavLink to="/portfolio" className={`header__link${isPortfolio ? ' header__link_selected' : ''}${isMenuOpen ? '' : ' header__link_hidden'}`} onClick={handleOpenNav}>PORTAFOLIO</NavLink>
+        <NavLink to="/services" className={`header__link${isServices ? ' header__link_selected' : ''}${isMenuOpen ? '' : ' header__link_hidden'}`} onClick={handleOpenNav}>SERVICIOS</NavLink>
         <div className="header__logo">
           <Link to="/">
             <img className='header__logo-image' src={isHome ? logo_letter : logo } alt="" />
           </Link>
         </div>
-        <NavLink to="/about" className={`header__link${isAbout ? ' header__link_selected' : ''}${isMenuOpen ? '' : ' header__link_hidden'}`}>NOSOTROS</NavLink>
-        <NavLink to="/contact" className={`header__link${isContact ? ' header__link_selected' : ''}${isMenuOpen ? '' : ' header__link_hidden'}`}>CONTACTO</NavLink>
+        <NavLink to="/about" className={`header__link${isAbout ? ' header__link_selected' : ''}${isMenuOpen ? '' : ' header__link_hidden'}`} onClick={handleOpenNav}>NOSOTROS</NavLink>
+        <NavLink to="/contact" className={`header__link${isContact ? ' header__link_selected' : ''}${isMenuOpen ? '' : ' header__link_hidden'}`} onClick={handleOpenNav}>CONTACTO</NavLink>
         <button className='header__menu' onClick={handleOpenNav}>
           <img className='header__menu-icon' src={menu} alt="" />
         </button>

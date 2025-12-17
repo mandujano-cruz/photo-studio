@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 export default function Register ({handleRegistration}) {
   const [data, setData] = useState({
     email: "",
     password: "",
-    name: "",
-    lastName: "",
+    full_name: "",
     role: "",
   });
 
@@ -32,25 +31,13 @@ export default function Register ({handleRegistration}) {
         noValidate
       >
       <div className="form__group">
-        <label className="form__label" htmlFor="name">Nombre(s)</label>
+        <label className="form__label" htmlFor="name">Nombre completo</label>
         <input 
           className="form__input" 
           type="text" 
-          id="name" 
-          name="name" 
-          value={data.name}
-          onChange={handleChange}
-          required 
-        />  
-      </div>
-      <div className="form__group">
-        <label className="form__label" htmlFor="lastName">Apellidos</label>
-        <input 
-          className="form__input" 
-          type="text" 
-          id="lasName" 
-          name="lastName" 
-          value={data.lastName}
+          id="full_name" 
+          name="full_name" 
+          value={data.full_name}
           onChange={handleChange}
           required 
         />  
@@ -80,7 +67,7 @@ export default function Register ({handleRegistration}) {
         />  
       </div>
       <div className="form__group">
-        <label className="form__label" htmlFor="role">Rol en Calendly</label>
+        <label className="form__label" htmlFor="role">Rol</label>
           <select 
             className="form__input" 
             id="role" 
@@ -92,7 +79,6 @@ export default function Register ({handleRegistration}) {
               <option value="">Seleccionar...</option>
               <option value="admin">Administrador</option>
               <option value="user">Usuario</option>
-              <option value="owner">Propietario</option>
           </select> 
       </div>
       <button className="form__button" type="submit">Registrar usuario</button>

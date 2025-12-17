@@ -28,7 +28,7 @@ export default function Home () {
           <h2 className="portfolio-section__title home__section-title">PORTAFOLIO</h2>
           <div className='portfolio-section__container-photo'>
             {photos.map(photo => (
-              <img className='portfolio-section__item' key={photo.id} src={photo.src} alt={photo.alt} />
+              <img className='portfolio-section__item js-open-modal-image' key={photo.id} src={photo.src} alt={photo.alt} />
             ))}
           </div>
         </div>
@@ -58,7 +58,7 @@ export default function Home () {
         <div className='about-section__container home__section'>
           <h2 className='about-section__title home__section-title'>NOSOTROS</h2>
           <div className='about-section__content'>
-            <img className='about-section__image' src={image6} alt="" />
+            <img className='about-section__image js-open-modal-image' src={image6} alt="" />
             <div className='about-section__text'>
               <h3 className='about-section__subtitle'>¡Hola, soy Tania!</h3>
               <p className='about-section__description'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem quibusdam tempora, mollitia quidem, facere illo nobis dolorem repudiandae numquam qui nostrum ipsa at? Sed dolores, eligendi doloribus rem possimus ex. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim mollitia repellat nisi excepturi repudiandae animi corporis, ipsum illo hic, explicabo pariatur qui sit ipsa impedit, vitae quibusdam. Delectus, voluptatem corrupti? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto vitae nostrum illum maiores, eum esse tempore aut soluta nihil laborum. Dolorem deleniti aut molestias deserunt sit a alias nostrum sed.</p>

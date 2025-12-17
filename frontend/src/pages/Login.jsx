@@ -1,7 +1,13 @@
 import { useState } from 'react';
+import { useContext } from "react";
 import logo from '../images/MP_letter.png';
+import CurrentUserContext from "../contexts/CurrentUserContext";
+import { useDashboardModal } from '../contexts/DashboardModalContext';
+import LoadingModal from '../components/Modal/LoadingModal';
 
-export default function Login ({handleLogin}) {
+export default function Login ({handleLogin, handleHome}) {
+  const { setCurrentUser } = useContext(CurrentUserContext);
+  
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -27,6 +33,7 @@ export default function Login ({handleLogin}) {
         <img className='login__image' src={logo} alt="" />
       </div>
       <div className="login__container-form">
+        <button className="login__back" onClick={handleHome}>{"<"} Volver a inicio</button>
         <h2 className="login__signin">INICIAR SESIÓN</h2>
         <form 
           className="login__form"

@@ -46,3 +46,10 @@
   background-color: #080;
   color: #FFF;
 }
+
+.appointments__empty-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}

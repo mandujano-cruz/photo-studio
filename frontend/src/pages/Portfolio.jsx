@@ -61,7 +61,7 @@ export default function Portfolio () {
         className="portfolio__gallery" 
       >
         {photos.map(photo => (
-          <img key={photo.id} src={photo.src} alt={photo.alt} className="portfolio__image" draggable="false" />
+          <img key={photo.id} src={photo.src} alt={photo.alt} className="portfolio__image js-open-modal-image" draggable="false" />
         ))}
       </section>
     </main>

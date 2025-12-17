@@ -12,18 +12,18 @@
   gap: 30px;
   justify-content: center;
   align-items: center;
+  color: #FFF;
 }
 
-.contact__calendly {
+.contact__api {
   margin: 0;
   width: 50%;
-  height: 700px;
+  /* height: 700px; */
 }
 
 .contact__content {
   width: 50%;
   flex-direction: column;
-  color: #FFF;
 }
 
 .contact__title{
@@ -32,4 +32,39 @@
 
 .contact__text {
   font-size: 20px;
+}
+
+.contact__form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.contact__input {
+  margin: 5px auto;
+  width: 100%;
+  height: 40px;
+  background-color: #000;
+  color: #FFF;
+  border: thin, solid, #FFF;
+  border-radius: 20px;
+  padding-left: 15px;
+}
+
+.contact__button {
+  margin: 60px auto 0;
+  width: 70%;
+  height: 40px;
+  background-color: #FFF;
+  color: #000;
+  border: thin, solid, #FFF;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.contact__button:hover {
+  background-color: #000;
+  color: #FFF;
+  transition: all 0.3s ease;
 }

@@ -10,6 +10,8 @@ import Dashboard from './private/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Modal from './components/Modal/Modal';
+import ModalImage from './components/Modal/ModalImage';
 import PrivateHeader from './private/PrivateHeader';
 import Appointments from './private/Appointments'
 import Users from './private/Users/Users';
@@ -17,9 +19,11 @@ import Photo from './private/Photography/Photo';
 import Profile from './private/Profile';
 import Main from './private/Main';
 import CurrentUserContext from './contexts/CurrentUserContext';
+import { ModalProvider } from './contexts/ModalContext';
 import Api from "./utils/api";
 import * as auth from './utils/auth';
 import * as tok from './utils/token';
+import { DashboardModalProvider } from './contexts/DashboardModalContext';
 
 
 function App() {
@@ -38,6 +42,16 @@ function App() {
     }
   });
 
+  // useEffect(() => {
+  //   const savedUser = localStorage.getItem("currentUser");
+  //   if (savedUser) {
+  //     const parsedUser = JSON.parse(savedUser);
+  //     setCurrentUser(parsedUser);
+  //     setIsLoggedIn(true);
+  //   }
+  // }, []);
+
+
   useEffect(() => {
     const token = tok.getToken();
     if (!token) {
@@ -48,6 +62,7 @@ function App() {
     auth.getUserInfo(token)
       .then((data) => {
         if(data?.email) {
+          setCurrentUser(data);
           setIsLoggedIn(true);
           setUserData({email: data.email});
         } else {
@@ -61,7 +76,7 @@ function App() {
       .finally(() => {
         setIsCheckingAuth(false);
       });
-  }, []);
+  }, [setCurrentUser]);
 
   // useEffect(() => {
   //   (async () => {
@@ -84,19 +99,29 @@ function App() {
       .then((data) => {
         if(data.token) {
           tok.setToken(data.token);
-          setUserData({ email });
+          localStorage.setItem("currentUser", JSON.stringify(data.user));
+          setUserData(data.user);
+          setCurrentUser(data.user);
           setIsLoggedIn(true);
           const redirectPath = location.state?.from?.pathname || "/dashboard";
           navigate(redirectPath);
         }
       })
-      .catch(() => console.log('Algo salio mal'));
+      .catch(() => {
+        console.log('Algo salio mal');
+
+      });
   };
 
   const handleSignOut = () => {
     tok.removeToken();
+    localStorage.removeItem("currentUser");
     setIsLoggedIn(false);
     navigate("/login");
+  }
+
+  const handleHome = ()=> {
+    navigate("/");
   }
 
   const handleKeyDown = useCallback((event) => {
@@ -115,8 +140,8 @@ function App() {
   }, [handleKeyDown]);
 
   return (
-    <>
-      <CurrentUserContext.Provider value={{currentUser}}>
+    <ModalProvider>
+      <CurrentUserContext.Provider value={{currentUser, setCurrentUser}}>
         {showPublicHeaderFooter && <Header/>}
         {showPrivateHeader && <PrivateHeader/>}
         <Routes>
@@ -125,12 +150,14 @@ function App() {
           <Route path='/services' element={<Services/>} />
           <Route path='/about' element={<About/>} />
           <Route path='/contact' element={<Contact/>} />
-          <Route path='/login' element={<Login handleLogin={handleLogin} />} />
+          <Route path='/login' element={<Login handleLogin={handleLogin} handleHome={handleHome} />} />
           <Route 
             path='/dashboard/*' 
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn} isCheckingAuth={isCheckingAuth} >
-                <Dashboard />
+                <DashboardModalProvider>
+                  <Dashboard />
+                </DashboardModalProvider>   
               </ProtectedRoute>
             } 
           >
@@ -138,7 +165,7 @@ function App() {
             <Route path='appointments' element={<Appointments/>} />
             <Route path='users' element={<Users/>} />
             <Route path='photo' element={<Photo/>} />
-            <Route path='profile' element={<Profile/>} />
+            <Route path='profile' element={<Profile onSignOut={handleSignOut} />} />
           </Route>
           <Route 
             path="*"
@@ -149,7 +176,9 @@ function App() {
         </Routes>
         {showPublicHeaderFooter &&  <Footer/>}
       </CurrentUserContext.Provider>
-    </>
+      <Modal/>
+      <ModalImage/>
+    </ModalProvider>
   );
 }
 
