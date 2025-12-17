@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3000";
+export const BASE_URL = "https://photo-studio-3om5.onrender.com";
 import { getToken } from "./token";
 
 export const register = (email, password, full_name, role) => {
