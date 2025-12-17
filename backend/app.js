@@ -41,6 +41,6 @@ app.use((req, res) => {
   res.status(404).send({message: "Recurso solicitado no encontrado"})
 });
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`Servidor corriendo en el puerto: ${port}`);
 });

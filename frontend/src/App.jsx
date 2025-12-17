@@ -155,7 +155,7 @@ function App() {
           <Route path='/contact' element={<Contact/>} />
           <Route path='/login' element={<Login handleLogin={handleLogin} handleHome={handleHome} />} />
           <Route 
-            path='/dashboard/*' 
+            path='/dashboard' 
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn} isCheckingAuth={isCheckingAuth} >
                 <DashboardModalProvider>
