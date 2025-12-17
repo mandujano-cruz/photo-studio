@@ -33,7 +33,6 @@ function App() {
   const [userData, setUserData] = useState ({email: "", password: ""});
   const location = useLocation();
   const navigate = useNavigate();
-  alert("App cargada en la ruta: " + window.location.pathname);
 
   const api = new Api({
     baseUrl: "http://localhost:3000/",
@@ -156,7 +155,7 @@ function App() {
           <Route path='/contact' element={<Contact/>} />
           <Route path='/login' element={<Login handleLogin={handleLogin} handleHome={handleHome} />} />
           <Route 
-            path='/dashboard' 
+            path='/dashboard/*' 
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn} isCheckingAuth={isCheckingAuth} >
                 <DashboardModalProvider>
