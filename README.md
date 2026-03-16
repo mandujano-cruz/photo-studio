@@ -1,4 +1,4 @@
-# 📸 Studio Capture: Photography Portfolio & Management
+# 📸 Photo Studio: Photography Portfolio & Management
 
 **Descripción:** *Photo Studio* es una solución digital integral diseñada para fotógrafos profesionales que buscan combinar una narrativa visual impactante con una gestión eficiente de servicios. A diferencia de una landing page convencional, este proyecto integra una arquitectura robusta para la gestión de citas en tiempo real, ofreciendo una experiencia fluida tanto para el artista como para el cliente final.
 
